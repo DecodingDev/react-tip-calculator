@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import TipCalculator from './tip-calculator/';
 import './index.css';
 
 ReactDOM.render(
-  <App />,
-  document.getElementById('root')
+    <TipCalculator />, document.getElementById('root')
 );
