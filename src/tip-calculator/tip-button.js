@@ -1,15 +1,10 @@
 import React from 'react';
 
-export default class TipButtom extends React.Component{
-    handleClick = () => {
-        this.props.onClickFunction(this.props.tipPercent);
-    };
-
-    render () {
-        return (
-            <button onClick={this.handleClick}>
-                {this.props.tipPercent} %
-            </button>
-        )
-    }
-}
+const TipButton = ({handleTip, label, tipPercent}) => {
+    return (
+        <button onClick={() => handleTip(tipPercent)}>
+            {label}
+        </button>
+    )
+};
+export default TipButton;
