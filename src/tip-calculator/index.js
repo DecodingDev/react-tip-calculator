@@ -20,7 +20,6 @@ export default class TipCalculator extends React.Component {
         this.setState((prevState) => ({personTotal: prevState.checkTotal*prevState.tipPercent/prevState.people}));
 	};
 	updateTip(tip) {
-        console.log(tip);
         this.setState({tipPercent: tip});
         this.calculateTip()
     }
@@ -39,10 +38,10 @@ export default class TipCalculator extends React.Component {
 				<FormInput label="What's your bill?" onChange={this.updateBill} name="check-amount" type="text" />
                 <FormInput label="How many people?"  onChange={this.updatePeopleCount} name="party" type="number" />
 				<h2>Tip percentage</h2>
-				<TipButton handleTip={this.updateTip} tipPercent="1.05"/>
-                <TipButton handleTip={this.updateTip} tipPercent="1.10"/>
-                <TipButton handleTip={this.updateTip} tipPercent="1.15"/>
-                <TipButton handleTip={this.updateTip} tipPercent="1.20"/>
+				<TipButton handleTip={this.updateTip} tipPercent="1.05" label="5%" />
+                <TipButton handleTip={this.updateTip} tipPercent="1.10" label="10%" />
+                <TipButton handleTip={this.updateTip} tipPercent="1.15" label="15%" />
+                <TipButton handleTip={this.updateTip} tipPercent="1.20" label="20%" />
 				<PerPersonTotal total={this.state.personTotal}/>
 			</div>
 
