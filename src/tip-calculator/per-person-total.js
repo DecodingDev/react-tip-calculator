@@ -3,8 +3,12 @@ import React from 'react';
 const PerPersonTotal = ({total}) => {
     return (
         <div className="total-amount">
-            <h2>Amount per Person</h2>
-            <p>{total}</p>
+            {total > 0 &&
+                <h2>Amount per Person</h2>
+            }
+            {total > 0 &&
+                <p>{total}</p>
+            }
         </div>
     );
 };

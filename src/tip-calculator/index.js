@@ -1,13 +1,15 @@
 import React from 'react';
 import FormInput from '../common/form-input';
 import TipButton from './tip-button';
-import PerPersonTotal from './per-person-total'
+import PerPersonTotal from './per-person-total';
+import './tipcalculator.css';
+import logo from './tipster.svg'
 export default class TipCalculator extends React.Component {
-	constructor(props) {
+    constructor(props) {
         super(props);
         this.state = {
-            checkTotal: 500,
-            tipPercent:0,
+            checkTotal: 0,
+            tipPercent: 0,
             people: 1,
             personTotal: 0
         };
@@ -17,34 +19,42 @@ export default class TipCalculator extends React.Component {
     }
 
     calculateTip = () => {
-        this.setState((prevState) => ({personTotal: prevState.checkTotal*prevState.tipPercent/prevState.people}));
-	};
-	updateTip(tip) {
+        this.setState((prevState) => ({personTotal: prevState.checkTotal * prevState.tipPercent / prevState.people}));
+    };
+
+    updateTip(tip) {
         this.setState({tipPercent: tip});
         this.calculateTip()
     }
+
     updateBill(event) {
         this.setState({checkTotal: event.target.value});
         this.calculateTip();
     };
+
     updatePeopleCount(event) {
         this.setState({people: event.target.value});
         this.calculateTip()
     }
-	render() {
-		return (
-			<div className="app">
-				<h1>Tipster</h1>
-				<FormInput label="What's your bill?" onChange={this.updateBill} name="check-amount" type="text" />
-                <FormInput label="How many people?"  onChange={this.updatePeopleCount} name="party" type="number" />
-				<h2>Tip percentage</h2>
-				<TipButton handleTip={this.updateTip} tipPercent="1.05" label="5%" />
-                <TipButton handleTip={this.updateTip} tipPercent="1.10" label="10%" />
-                <TipButton handleTip={this.updateTip} tipPercent="1.15" label="15%" />
-                <TipButton handleTip={this.updateTip} tipPercent="1.20" label="20%" />
-				<PerPersonTotal total={this.state.personTotal}/>
-			</div>
 
-		)
-	}
+    render() {
+        return (
+            <div className="tip-calculator">
+                <div className="wrapper">
+                    <h1><img src={logo} alt=""/></h1>
+                    <FormInput label="What's your bill?" onChange={this.updateBill} name="check-amount" type="number"/>
+                    <FormInput label="How many people?" onChange={this.updatePeopleCount} name="party" type="number"/>
+                    <h2 className="label">Tip</h2>
+                    <div className="button-group">
+                        <TipButton handleTip={this.updateTip} tipPercent="1.05" label="5"/>
+                        <TipButton handleTip={this.updateTip} tipPercent="1.10" label="10"/>
+                        <TipButton handleTip={this.updateTip} tipPercent="1.15" label="15"/>
+                        <TipButton handleTip={this.updateTip} tipPercent="1.20" label="20"/>
+                    </div>
+                    <PerPersonTotal total={this.state.personTotal}/>
+                </div>
+            </div>
+
+        )
+    }
 }

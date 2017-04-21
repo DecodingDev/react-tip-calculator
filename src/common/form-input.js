@@ -1,12 +1,12 @@
 import React from 'react';
-
-const FormInput = ({name, label, onChange, placeholder, value}) => {
+import './forminput.css';
+const FormInput = ({name, label, onChange, placeholder, value, type}) => {
 
 	return (
 		<p className="form-input">
 			<label htmlFor={name}>{label}</label>
 				<input
-					type="text"
+					type={type}
 					name={name}
 					className="form-control"
 					placeholder={placeholder}

@@ -1,0 +1,22 @@
+.form-input {
+    margin:40px 0;
+}
+.form-input label, .label {
+    display: block;
+    text-align: center;
+    color: #2b810f;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+.form-input input {
+    width: 100%;
+    padding:10px;
+    background: none;
+    border: none;
+    border-bottom: #2b810f 2px solid;
+    font-size: 38px;
+    font-weight: 900;
+    color: #2f2f2f;
+    text-align: center;
+}

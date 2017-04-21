@@ -1,5 +1,44 @@
+html, body {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #65f023;
+  background: -moz-linear-gradient(top, #65f023 0%, #34db12 100%);
+  background: -webkit-linear-gradient(top, #65f023 0%,#34db12 100%);
+  background: linear-gradient(to bottom, #65f023 0%,#34db12 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#65f023', endColorstr='#34db12',GradientType=0 );
+}
+
+body:before {
+  content: " ";
+  background: rgba(0,0,0,.05);
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top:-70%;
+  right: -40%;
+  transform: rotate(45deg);
+}
+body:after {
+  content: " ";
+  background: rgba(0,0,0,.05);
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top:-90%;
+  right: -40%;
+  transform: rotate(45deg);
 }

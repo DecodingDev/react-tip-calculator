@@ -1,9 +1,9 @@
 import React from 'react';
-
+import './tipbotton.css';
 const TipButton = ({handleTip, label, tipPercent}) => {
     return (
-        <button onClick={() => handleTip(tipPercent)}>
-            {label}
+        <button className="tip-button" onClick={() => handleTip(tipPercent)}>
+            {label}<sup>%</sup>
         </button>
     )
 };
