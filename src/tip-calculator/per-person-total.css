@@ -1,0 +1,16 @@
+.total-amount {
+    text-align: center;
+}
+.total-amount h2 {
+    font-weight: 900;
+    color: white;
+    font-size: 102px;
+    text-shadow: 2px 1px 20px rgba(0, 0, 0, 0.27);
+    margin:40px 0 0;
+}
+.total-amount p {
+    text-transform: uppercase;
+    color: #2c890f;
+    font-size:20px;
+    margin: 10px;
+}
